@@ -60,7 +60,7 @@ public class Categorie extends Entite {
         this.products = products;
     }
 
-    //HashCode and equals function to solve the possible Primary Key issues.
+    //HashCode and equals function to solve the possible Primary Key issues.-
     @Override
     public int hashCode() {
         return new HashCodeBuilder().append(this.nom).toHashCode();
