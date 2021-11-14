@@ -1,6 +1,6 @@
 package fr.diginamic.openfoodfacts.dao;
 
-import fr.diginamic.openfoodfacts.entite.Allergene;
+import fr.diginamic.openfoodfacts.entity.Allergene;
 
 import javax.persistence.EntityManager;
 

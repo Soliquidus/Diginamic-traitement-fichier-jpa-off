@@ -1,4 +1,7 @@
-package fr.diginamic.openfoodfacts.entite;
+package fr.diginamic.openfoodfacts.entity;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -21,7 +24,7 @@ public class Categorie extends Entite {
      * The Products.
      */
     @OneToMany(mappedBy = "categorie")
-    private List<Produit> produits = new ArrayList<>();
+    private List<Produit> products = new ArrayList<>();
 
     /**
      * Instantiates a new Category.
@@ -45,15 +48,31 @@ public class Categorie extends Entite {
      * @return the product
      */
     public List<Produit> getProduits() {
-        return produits;
+        return products;
     }
 
     /**
      * Sets products.
      *
-     * @param produits the products
+     * @param products the products
      */
-    public void setProduits(List<Produit> produits) {
-        this.produits = produits;
+    public void setProduits(List<Produit> products) {
+        this.products = products;
+    }
+
+    //HashCode and equals function to solve the possible Primary Key issues.
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder().append(this.nom).toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (!(obj instanceof Categorie)) {
+            return false;
+        }
+        Categorie autre = (Categorie) obj;
+        return new EqualsBuilder().append(this.nom, autre.getNom()).isEquals();
     }
 }

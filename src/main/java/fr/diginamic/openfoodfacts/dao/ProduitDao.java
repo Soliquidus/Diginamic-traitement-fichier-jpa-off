@@ -1,7 +1,7 @@
 package fr.diginamic.openfoodfacts.dao;
 
-import fr.diginamic.openfoodfacts.entite.Marque;
-import fr.diginamic.openfoodfacts.entite.Produit;
+import fr.diginamic.openfoodfacts.entity.Marque;
+import fr.diginamic.openfoodfacts.entity.Produit;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;

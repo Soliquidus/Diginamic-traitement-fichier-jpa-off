@@ -1,6 +1,6 @@
 package fr.diginamic.openfoodfacts.dao;
 
-import fr.diginamic.openfoodfacts.entite.Ingredient;
+import fr.diginamic.openfoodfacts.entity.Ingredient;
 
 import javax.persistence.EntityManager;
 

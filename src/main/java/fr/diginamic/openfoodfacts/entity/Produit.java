@@ -1,4 +1,7 @@
-package fr.diginamic.openfoodfacts.entite;
+package fr.diginamic.openfoodfacts.entity;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -167,6 +170,22 @@ public class Produit extends Entite {
      */
     public Produit(String nom) {
         super(nom);
+    }
+
+    //HashCode and equals function to solve the possible Primary Key issues.
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder().append(this.nom).toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (!(obj instanceof Produit)) {
+            return false;
+        }
+        Produit autre = (Produit) obj;
+        return new EqualsBuilder().append(this.nom, autre.getNom()).isEquals();
     }
 
     /**

@@ -1,6 +1,6 @@
 package fr.diginamic.openfoodfacts.dao;
 
-import fr.diginamic.openfoodfacts.entite.Entite;
+import fr.diginamic.openfoodfacts.entity.Entite;
 import fr.diginamic.openfoodfacts.utils.HibernateUtil;
 
 import javax.persistence.EntityManager;
@@ -8,7 +8,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 /**
- * Main DAO class.
+ * Main DAO class for objects containing only id and name columns.
  *
  * @param <E> the type parameter
  * @author Tibo Pfeifer

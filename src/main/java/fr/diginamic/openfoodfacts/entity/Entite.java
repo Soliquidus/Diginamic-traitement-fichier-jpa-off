@@ -1,4 +1,4 @@
-package fr.diginamic.openfoodfacts.entite;
+package fr.diginamic.openfoodfacts.entity;
 
 import javax.persistence.*;
 

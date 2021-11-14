@@ -6,26 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Main text manipulations like String converter in Integer or Double types.
+ * Main text manipulations like String converter to Double type.
  *
  * @author Tibo Pfeifer
  * @version 1.0
- * @date 14 /11/2021
+ * @date 14/11/2021
  */
 public class TextManipulation {
-
-    /**
-     * Convert to int a String if it contains a number.
-     *
-     * @param string the string
-     * @return the integer
-     */
-    public static Integer convertToInt(String string) {
-        if (NumberUtils.isDigits(string)) {
-            return Integer.parseInt(string);
-        }
-        return null;
-    }
 
     /**
      * Convert to double a String if it contains a number.

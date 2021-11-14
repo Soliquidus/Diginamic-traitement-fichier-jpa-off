@@ -1,6 +1,6 @@
 package fr.diginamic.openfoodfacts.utils;
 
-import fr.diginamic.openfoodfacts.entite.*;
+import fr.diginamic.openfoodfacts.entity.*;
 import fr.diginamic.openfoodfacts.exception.FileException;
 
 import java.io.BufferedReader;
@@ -17,7 +17,7 @@ import java.util.Set;
  *
  * @author Tibo Pfeifer
  * @version 1.0
- * @date 13 /11/2021
+ * @date 13/11/2021
  */
 public class FileReader {
 
@@ -42,13 +42,12 @@ public class FileReader {
     }
 
     /**
-     * Gets produits.
+     * Gets products.
      *
      * @param inputStream the input stream
-     * @return the produits
-     * @throws IOException the io exception
+     * @return the products
      */
-    public List<Produit> getProduits(InputStream inputStream) throws IOException {
+    public List<Produit> getProducts(InputStream inputStream) {
         List<String> lines = null;
         try {
             lines = readFromInput(inputStream);
@@ -57,17 +56,18 @@ public class FileReader {
         }
         lines.remove(0);
 
-        List<Produit> produits = new ArrayList<>();
-        return produits;
+        List<Produit> products = new ArrayList<>();
+        lines.forEach(line -> products.add(getProductByLine(line)));
+        return products;
     }
 
     /**
      * Read line by line in the CSV file to get each product.
      *
      * @param line the line
-     * @return the produit
+     * @return the product
      */
-    private Produit getProduitByLine(String line) {
+    private Produit getProductByLine(String line) {
 
         String[] parts = line.split("\\|", -1);
 
