@@ -1,9 +1,9 @@
-package fr.diginamic.petstore.entite;
+package fr.diginamic.openfoodfacts.entite;
 
 import javax.persistence.*;
 
 /**
- * Entité métier
+ * Main Entity
  *
  * @author Tibo Pfeifer
  * @version 1.0
@@ -20,18 +20,18 @@ public abstract class Entite {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
     /**
-     * The Nom.
+     * The Name.
      */
     protected String nom;
 
     /**
-     * Instantiates a new Entite.
+     * Instantiates a new Entity.
      */
     public Entite() {
     }
 
     /**
-     * Instantiates a new Entite.
+     * Instantiates a new Entity.
      *
      * @param nom the nom
      */
@@ -58,18 +58,18 @@ public abstract class Entite {
     }
 
     /**
-     * Gets nom.
+     * Gets name.
      *
-     * @return the nom
+     * @return the name
      */
     public String getNom() {
         return nom;
     }
 
     /**
-     * Sets nom.
+     * Sets name.
      *
-     * @param nom the nom
+     * @param nom the name
      */
     public void setNom(String nom) {
         this.nom = nom;

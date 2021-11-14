@@ -1,4 +1,4 @@
-package fr.diginamic.petstore.entite;
+package fr.diginamic.openfoodfacts.entite;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -21,33 +21,33 @@ public class Marque extends Entite{
     private List<Produit> produits = new ArrayList<>();
 
     /**
-     * Instantiates a new Marque for Hibernate.
+     * Instantiates a new Brand for Hibernate.
      */
     public Marque() {
     }
 
     /**
-     * Instantiates a new Marque.
+     * Instantiates a new Brand.
      *
-     * @param nom the nom
+     * @param nom the name
      */
     public Marque(String nom) {
         super(nom);
     }
 
     /**
-     * Gets produits.
+     * Gets products.
      *
-     * @return the produits
+     * @return the products
      */
     public List<Produit> getProduits() {
         return produits;
     }
 
     /**
-     * Sets produits.
+     * Sets products.
      *
-     * @param produits the produits
+     * @param produits the products
      */
     public void setProduits(List<Produit> produits) {
         this.produits = produits;

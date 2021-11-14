@@ -1,38 +1,42 @@
-package fr.diginamic.petstore.entite;
+package fr.diginamic.openfoodfacts.entite;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Entité catégorie d'un produit
+ * Class Additif
  *
  * @author Tibo Pfeifer
  * @version 1.0
  * @date 13/11/2021
  */
 @Entity
-@Table(name = "Categorie")
-public class Categorie extends Entite {
+@Table(name = "Additif")
+public class Additif extends Entite {
 
-    @OneToMany(mappedBy = "categorie")
+    /**
+     * The Products.
+     */
+    @ManyToMany
+    @JoinTable(name = "add_in_produit",
+            joinColumns = @JoinColumn(name = "id_additif", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "id_produit", referencedColumnName = "id"))
     private List<Produit> produits = new ArrayList<>();
 
     /**
-     * Instantiates a new Categorie.
+     * Instantiates a new Additif.
      *
      * @param nom the nom
      */
-    public Categorie(String nom) {
+    public Additif(String nom) {
         super(nom);
     }
 
     /**
-     * Instantiates a new Categorie for Hibernate.
+     * Instantiates a new Additif for Hibernate.
      */
-    public Categorie() {
+    public Additif() {
 
     }
 

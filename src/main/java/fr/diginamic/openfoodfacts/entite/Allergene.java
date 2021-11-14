@@ -1,4 +1,4 @@
-package fr.diginamic.petstore.entite;
+package fr.diginamic.openfoodfacts.entite;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Allergene extends Entite{
 
     /**
-     * Instantiates a new Allergene.
+     * Instantiates a new Allergen.
      *
      * @param nom the nom
      */
@@ -24,7 +24,7 @@ public class Allergene extends Entite{
     }
 
     /**
-     * Instantiates a new Allergene for Hibernate.
+     * Instantiates a new Allergen for Hibernate.
      */
     public Allergene() {
 
